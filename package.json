@@ -1,6 +1,6 @@
 {
-  "name": "vue-camera-lib",
-  "version": "1.0.4",
+  "name": "vue-camera-lib-2",
+  "version": "1.0.0",
   "description": "Simple library for Vue.js 3. Display the camera's output or take a photo from the mobile camera/webcam.",
   "main": "index.js",
   "scripts": {
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AlexKratky/vue-camera-lib.git"
+    "url": "git+https://github.com/Tenwq/vue-camera-lib-2.git"
   },
   "keywords": [
     "vue",
@@ -23,9 +23,9 @@
   "author": "Alex Kratky",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/AlexKratky/vue-camera-lib/issues"
+    "url": "https://github.com/Tenwq/vue-camera-lib-2/issues"
   },
-  "homepage": "https://github.com/AlexKratky/vue-camera-lib#readme",
+  "homepage": "https://github.com/Tenwq/vue-camera-lib-2#readme",
   "dependencies": {
     "deviceorientation-js": "^1.0.0",
     "rotate-canvas": "^1.0.0"
