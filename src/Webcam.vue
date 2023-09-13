@@ -1,6 +1,6 @@
 
 <template>
-  <video ref="video" class="w-full h-auto" :class="classList, deviceId ? '' : 'hidden'" autoplay />
+  <video ref="video" class="w-full h-auto" :class="classList, deviceId ? '' : 'hidden'" :style="{ 'transform': flipped ? 'scaleX(-1)' : '' }" autoplay />
   <canvas ref="canvas" style="display: none;" />
   <div class="hidden" v-if="audio">
     <audio ref="audio" volume="0.5" src="https://www.soundjay.com/mechanical/camera-shutter-click-08.mp3"></audio>
@@ -99,6 +99,10 @@ export default {
     shutterEffect: {
       type: Boolean,
       default: true
+    },
+    flipped: {
+      type: Boolean,
+      default: false
     }
   },
   data() {
@@ -271,9 +275,9 @@ export default {
       let canvas = this.$refs.canvas;
       canvas.height = video.videoHeight;
       canvas.width = video.videoWidth;
-      let ctx = canvas.getContext('2d');
-
-      drawRotated(video, canvas, ctx, this.tryToRotateImage ? deviceorientation.getDeviceOrientation() : 0)
+      let ctx = canvas.getContext('2d')
+      const degrees = this.flipped ? 90 : 0 // add by wq
+      drawRotated(video, canvas, ctx, this.tryToRotateImage ? deviceorientation.getDeviceOrientation() : degrees)
 
       let image_data_url = canvas.toDataURL(this.imageType);
       canvas.toBlob(blob => {
